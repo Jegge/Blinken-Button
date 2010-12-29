@@ -25,7 +25,7 @@
 # PROGRAMMER_PORT ...  the port the programmer is attached to. This is highly 
 #                dependent on your programmer and operating system.
 #                This settings works for my mac
-PROGRAMMER = avrispmkII
+PROGRAMMER = usbtiny
 PROGRAMMER_PORT = usb
 
 # This are the hardware settings for the Blinken Buttons for Beginners. There is
