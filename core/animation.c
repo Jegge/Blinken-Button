@@ -189,7 +189,13 @@ animation_init(void)
   state_animation_test_pattern = state_register_state();
 
   //before we do anything we switch on the test pattern
-  state_activate(state_animation_test_pattern);
+  //state_activate(state_animation_test_pattern);
+  //We leave the buffer in a proper state
+  animation_clear_buffer(0);
+  //prepare to load the first sequence
+  animation_load_next_sequence();
+  //load the first sprite immediately
+  animation_load_next_sprite();
 
   //initialize the display
   display_init();
@@ -224,7 +230,7 @@ animation_load_next_sequence(void)
     }
   uint8_t speed = curr_sequence.display_speed;
   //now set the sequence a s currently displayed sequence
-  animation_set_sequence(0, sequence_length - 1, speed);
+  animation_set_sequence(0, sequence_length - 1, (int8_t)speed);
   //set the sequence display length
   switch_sequence_interval = curr_sequence.display_length;
 }
@@ -519,39 +525,7 @@ animation_start_animation_timer(void)
  */
 ISR(TIMER2_OVF_vect)
 {
-  if (state_is_active(state_animation_test_pattern)) {
-      //we simply let a dot go from top left to bottom right
-      //so we first clear the buffer
-      animation_clear_buffer(0);
-      //then we enable the dot in the current column & row
-      animations_buffer[0][test_row] = _BV(test_column);
-      //load it immediately to the display
-      display_load_sprite(animations_buffer[0]);
-      //and switch the buffer
-      display_advance_buffer();
-      //on to thenext column
-      test_column++;
-      //if we reached the last column
-      if (test_column>=8) {
-          //we switch to the next row
-          test_row++;
-          //and start at the first column again
-          test_column=0;
-          //and if we even reached the last row - we can end the test pattern
-          if (test_row>=8) {
-              //We leave the buffer in a proper state
-              animation_clear_buffer(0);
-              //and deactivate our test state an go over to 'normal' operation
-              state_deactivate(state_animation_test_pattern);
-              //prepare to load the first sequence
-              animation_load_next_sequence();
-              //load the first sprite immediately
-              animation_load_next_sprite();
-          }
-      }
-      return;
-  }
-  //we should not wait any longer
+    //we should not wait any longer
   if (animation_sprite_wait == 0)
     {
       if (state_is_active(state_animation_displaying_animation))
