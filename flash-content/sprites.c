@@ -63,26 +63,68 @@ const prog_uint8_t PROGMEM predefined_sprites[][8] = {
     0x99,    // X__XX__X
     0xC3     // XX____XX
   },
-    {
-      0x00,    // ________ 4
-      0x00,    // ________
-      0x14,    // ___X_X__
-      0x3E,    // __XXXXX_
-      0x3E,    // __XXXXX_
-      0x1C,    // ___XXX__
-      0x08,    // ____X___
-      0x00     // ________
-    },
-    {
-      0x00,    // ________  5
-      0x66,    // _XX__XX_
-      0xFF,    // XXXXXXXX
-      0xFF,    // XXXXXXXX
-      0xFF,    // XXXXXXXX
-      0x7E,    // _XXXXXX_
-      0x3C,    // __XXXX__
-      0x18     // ___XX___
-    },
+  {
+    0x00,    // ________ 4
+    0x00,    // ________
+    0x14,    // ___X_X__
+    0x3E,    // __XXXXX_
+    0x3E,    // __XXXXX_
+    0x1C,    // ___XXX__
+    0x08,    // ____X___
+    0x00     // ________
+  },
+  {
+    0x00,    // ________  5
+    0x66,    // _XX__XX_
+    0xFF,    // XXXXXXXX
+    0xFF,    // XXXXXXXX
+    0xFF,    // XXXXXXXX
+    0x7E,    // _XXXXXX_
+    0x3C,    // __XXXX__
+    0x18     // ___XX___
+  },
+  {
+  	0x3C,	 // __XXXX__  6
+  	0x7E,	 // _XXXXXX_
+  	0xEF,	 // XXX_XXXX
+  	0xFF,	 // XXXXXXXX
+  	0xFF,	 // XXXXXXXX
+  	0xFF,	 // XXXXXXXX
+  	0x7E,	 // _XXXXXX_
+  	0x3C	 // __XXXX__
+  },
+  {
+  	0x3C,	 // __XXXX__  7
+  	0x7E,	 // _XXXXXX_
+  	0xEF,	 // XXX_XXXX
+  	0xFF,	 // XXXXXXXX
+  	0xF0,	 // XXXX____
+  	0xFF,	 // XXXXXXXX
+  	0x7E,	 // _XXXXXX_
+  	0x3C	 // __XXXX__
+  },
+  {
+  	0x3C,	 // __XXXX__  8
+  	0x7E,	 // _XXXXXX_
+  	0xEF,	 // XXX_XXXX
+  	0xFC,	 // XXXXXX__
+  	0xF0,	 // XXXX____
+  	0xFC,	 // XXXXXX__
+  	0x7E,	 // _XXXXXX_
+  	0x3C	 // __XXXX__
+  },
+  {
+  	0x00,	 // ________  7
+  	0x00,	 // ________
+  	0x00,	 // ________
+  	0x00,	 // ________
+  	0x00,	 // ________
+  	0x00,	 // ________
+  	0x00,	 // ________
+  	0x00	 // ________
+  }
+
+  /*
   {
     0xCC,    // XX__XX__  6
     0xCC,    // XX__XX__
@@ -252,7 +294,7 @@ const prog_uint8_t PROGMEM predefined_sprites[][8] = {
     0x27,    // __X__XXX
     0x73,    // _XXX__XX
     0xF9,    // XXXXX__X
-  }
+  }*/
 };
 
 /*

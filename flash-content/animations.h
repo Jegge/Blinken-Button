@@ -34,8 +34,9 @@
 #define MAX_MESSAGE 3
 //and now to the messages
 const prog_char PROGMEM message_00[] PROGMEM = "INTERACTIVE-MATTER.ORG";
-const prog_char PROGMEM message_01[] PROGMEM = "SPACE INVADERS BUTTON";
+const prog_char PROGMEM message_01[] PROGMEM = "INSERT COIN";
 const prog_char PROGMEM message_02[] PROGMEM = "SPACE INVADERS AGAINST RACISM";
+const prog_char PROGMEM message_03[] PROGMEM = "";
 PGM_P PROGMEM messages[] =
   { message_00, message_01, message_02 };
 //a buffer for loading messages from flash
@@ -49,10 +50,8 @@ const uint8_t sprite_1[] PROGMEM =
   { 2, 2, 3 };
 const uint8_t sprite_2[] PROGMEM =
   { 2, 4, 5 };
-const uint8_t sprite_3[] PROGMEM =
-  { 8, 14, 15, 16, 11, 11, 16, 15, 14 };
-const uint8_t sprite_4[] PROGMEM =
-  { 7, 8, 9, 10, 11, 10, 9, 8 };
+const uint8_t sprite_3[] PROGMEM = 
+  { 4, 6, 7, 8, 7 };
 //a sequence is a animation + display speed an length
 typedef struct
 {
@@ -61,15 +60,14 @@ typedef struct
   PGM_P sprites;
 } _sequence_struct;
 
-#define MAX_SEQUENCE 6
+#define MAX_SEQUENCE 4
 const _sequence_struct sequences[] PROGMEM =
   {
   //the first two sprites are defined twice - to ensure that they are shown more often
-        { 14, 20, sprite_0 },
-        { 14, 20, sprite_1 },
-        { 14, 20, sprite_0 },
-        { 14, 20, sprite_1 },
-        { 3, 5, sprite_3 },
-        { 3, 5, sprite_4 } };
+        { 7, 20, sprite_0 },
+        { 7, 20, sprite_1 },
+        { 7, 20, sprite_2 },
+        { 7, 20, sprite_3 } 
+   };
 
 #endif /* ANIMATIONS_H_ */
